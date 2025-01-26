@@ -52,7 +52,7 @@ speedrun crud --src internal/crud/example/in/peach.go::Peach::Id --dst internal/
 Usage:
 
 ```bash
-speedrun layout --svc <service_name>
+speedrun layout --svc aboba
 ```
 
 Output: ex. [internal/layout/example](internal/layout/example)
