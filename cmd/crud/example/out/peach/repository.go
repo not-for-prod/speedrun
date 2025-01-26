@@ -2,8 +2,8 @@ package peach_repository
 
 import (
 	trmsqlx "github.com/avito-tech/go-transaction-manager/sqlx"
-	"github.com/jmoiron/sqlx"
 	"github.com/avito-tech/go-transaction-manager/trm/manager"
+	"github.com/jmoiron/sqlx"
 )
 
 type PeachRepository struct {

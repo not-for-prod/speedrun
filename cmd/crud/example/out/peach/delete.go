@@ -1,14 +1,10 @@
-
 package peach_repository
 
 import (
 	"context"
-	"github.com/jmoiron/sqlx"
+
+	"github.com/not-for-prod/speedrun/cmd/crud/example/out/peach/sql"
 	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/attribute"
-	peach "github.com/not-for-prod/speedrun/cmd/crud/example/in"
-	sql "github.com/not-for-prod/speedrun/cmd/crud/example/out/peach/sql"
-	
 )
 
 func (r *PeachRepository) Delete(ctx context.Context, id int) error {
@@ -19,9 +15,9 @@ func (r *PeachRepository) Delete(ctx context.Context, id int) error {
 		ctx,
 		sql.Delete,
 		id,
-	)	
+	)
 	if err != nil {
-		
+
 	}
 
 	return nil

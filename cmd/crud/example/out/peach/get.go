@@ -3,12 +3,6 @@ package peach_repository
 
 import (
 	"context"
-	"github.com/jmoiron/sqlx"
-	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/attribute"
-	peach "github.com/not-for-prod/speedrun/cmd/crud/example/in"
-	sql "github.com/not-for-prod/speedrun/cmd/crud/example/out/peach/sql"
-	
 )
 
 func (r *PeachRepository) Get(ctx context.Context, id int) (.Peach, error) {

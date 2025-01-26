@@ -1,16 +1,12 @@
-
 package peach_repository
 
 import (
 	"context"
-	"github.com/jmoiron/sqlx"
+
+	peach "github.com/not-for-prod/speedrun/cmd/crud/example/in"
 	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/attribute"
-	
-		peach "github.com/not-for-prod/speedrun/cmd/crud/example/in"
-	
-		sql "github.com/not-for-prod/speedrun/cmd/crud/example/out/peach/sql"
-	
+
+	sql "github.com/not-for-prod/speedrun/cmd/crud/example/out/peach/sql"
 )
 
 func (r *PeachRepository) Create(ctx context.Context, peach peach.Peach) (int, error) {
@@ -20,14 +16,13 @@ func (r *PeachRepository) Create(ctx context.Context, peach peach.Peach) (int, e
 	var dbID int
 
 	err := r.ctxGetter.DefaultTrOrDB(ctx, r.db).GetContext(
-		ctx, 
+		ctx,
 		&dbID,
 		sql.Insert,
 		peach.Id,
 		peach.Size,
 		peach.Juice,
-		
-	)	
+	)
 	if err != nil {
 
 	}
