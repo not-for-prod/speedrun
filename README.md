@@ -12,7 +12,9 @@ go install github.com/not-for-prod/speedrun
 
 ## CRUD
 
-Execute:
+> generates postgres CRUD operations by entity
+
+Usage:
 
 ```bash
 speedrun crud --src internal/crud/example/in/peach.go::Peach::Id --dst internal/crud/example/out
@@ -42,3 +44,30 @@ speedrun crud --src internal/crud/example/in/peach.go::Peach::Id --dst internal/
         ├── <uuid>_create_<entity>.up.sql
         └── <uuid>_create_<entity>.down.sql
     ```
+
+## Layout
+
+> generates project folders
+
+Usage:
+
+```bash
+speedrun layout --svc <service_name>
+```
+
+Output: ex. [internal/layout/example](internal/layout/example)
+```
+├── cmd
+│   └── <service_name>
+├── internal
+│   ├── config
+│   ├── <service_name> 
+│   │   ├── app
+│   │   ├── domain
+│   │   │   ├── entity
+│   │   │   ├── valueobject
+│   │   │   └── microtypes
+│   │   └── infrastructure
+│   └── pkg
+└── pkg
+```

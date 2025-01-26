@@ -22,16 +22,16 @@ type generationCommand struct {
 
 func generationCommandFromString(src, dst string) generationCommand {
 	if src == "" {
-		logger.Fatalf("src flag is required")
+		logger.Fatalf("src flag is required: speedrun crud --src <path>::<struct name>::<id field> --dst <path>")
 	}
 
 	if dst == "" {
-		logger.Fatalf("dst flag is required")
+		logger.Fatalf("dst flag is required: speedrun crud --src <path>::<struct name>::<id field> --dst <path>")
 	}
 
 	parts := strings.Split(src, "::")
 	if len(parts) != 3 {
-		logger.Fatalf("invalid path format expected format: <path to file>::<struct name>::<id field>")
+		logger.Fatalf("invalid src flag, expected: speedrun crud --src <path>::<struct name>::<id field> --dst <path>")
 	}
 
 	return generationCommand{
