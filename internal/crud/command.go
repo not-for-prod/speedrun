@@ -10,6 +10,7 @@ import (
 	"github.com/not-for-prod/speedrun/internal/crud/generators/repository"
 	"github.com/not-for-prod/speedrun/internal/crud/models"
 	"github.com/not-for-prod/speedrun/internal/pkg/logger"
+	"github.com/samber/lo"
 )
 
 type generationCommand struct {
@@ -55,12 +56,14 @@ func (c generationCommand) execute() {
 
 	var id models.Field
 
-	for _, f := range fields {
-		if f.Name == c.idField {
-			id = f
-			break
+	fields = lo.Filter(fields, func(item models.Field, _ int) bool {
+		if item.Name == c.idField {
+			id = item
+			return false
 		}
-	}
+
+		return true
+	})
 
 	logger.Info("id:", id)
 
@@ -68,7 +71,7 @@ func (c generationCommand) execute() {
 	files := make([]models.File, 0, 4*2+2+1)
 	files = append(
 		append(
-			model.Generate(currentPackage, c.srcPath, c.dstPath, c.structName, fields),
+			model.Generate(currentPackage, c.srcPath, c.dstPath, c.structName, id, fields),
 			append(repository.Generate(c.dstPath, c.structName),
 				funcs.Generate(currentPackage, c.srcPath, c.dstPath, c.structName, id, fields)...,
 			)...,

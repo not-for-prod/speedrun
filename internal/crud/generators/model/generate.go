@@ -41,13 +41,13 @@ type generateData struct {
 	Fields     []models.Field
 }
 
-func Generate(packageMod, src, dst, structName string, fields []models.Field) []models.File {
+func Generate(packageMod, src, dst, structName string, id models.Field, fields []models.Field) []models.File {
 	gData := generateData{
 		StructName: structName,
 		Imports: []models.Import{
 			{Alias: string_tools.SnakeCase(structName), Pkg: packageMod + "/" + filepath.Dir(src)},
 		},
-		Fields: fields,
+		Fields: append([]models.Field{id}, fields...),
 	}
 
 	generated := generators.Generate(

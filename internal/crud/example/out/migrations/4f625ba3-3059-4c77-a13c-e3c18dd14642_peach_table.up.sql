@@ -2,8 +2,7 @@
 create table peach
 (
     id INTEGER PRIMARY KEY
-    , id INTEGER
-	, size INTEGER
+    , size INTEGER
 	, juice INTEGER
 	
 );
