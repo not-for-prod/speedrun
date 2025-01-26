@@ -8,9 +8,30 @@ Installation:
 go install github.com/not-for-prod/speedrun
 ```
 
-Main features:
+# Main features:
 
-- CRUD
-    ```bash
-    speedrun crud --src internal/crud/example/in/peach.go::Peach::Id --dst internal/crud/example/out
+## CRUD
+
+Execute:
+
+```bash
+speedrun crud --src internal/crud/example/in/peach.go::Peach::Id --dst internal/crud/example/out
+```
+
+- Input: ex. [internal/crud/example/in/peach.go](internal/crud/example/in/peach.go) - simple typed entity
+
+- Output:
+    ```
+    └── <entity>
+        ├── sql
+        │   ├── create.sql
+        │   ├── get.sql
+        │   ├── update.sql
+        │   ├── delete.sql
+        │   └── sql.go
+        ├── create.go
+        ├── get.go
+        ├── update.go
+        ├── delete.go
+        └── repository.go
     ```
