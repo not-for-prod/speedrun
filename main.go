@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/not-for-prod/speedrun/internal/crud"
+	"github.com/not-for-prod/speedrun/internal/layout"
 	"github.com/spf13/cobra"
 )
 
@@ -16,6 +17,7 @@ var (
 func main() {
 	// fill root with other cmds
 	rootCmd.AddCommand(crud.Cmd)
+	rootCmd.AddCommand(layout.Cmd)
 
 	_ = rootCmd.Execute()
 }
