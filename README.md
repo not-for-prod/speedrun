@@ -12,5 +12,5 @@ Main features:
 
 - CRUD
     ```bash
-    speedrun crud --src cmd/crud/example/in/peach.go::Peach::Id --dst cmd/crud/example/out
+    speedrun crud --src internal/crud/example/in/peach.go::Peach::Id --dst internal/crud/example/out
     ```
