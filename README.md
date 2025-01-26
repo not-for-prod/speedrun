@@ -21,6 +21,7 @@ speedrun crud --src internal/crud/example/in/peach.go::Peach::Id --dst internal/
 - Input: ex. [internal/crud/example/in/peach.go](internal/crud/example/in/peach.go) - simple typed entity
 
 - Output: ex. [internal/crud/example/out](internal/crud/example/out)
+    In dst folder:
     ```
     └── <entity>
         ├── sql
@@ -34,4 +35,10 @@ speedrun crud --src internal/crud/example/in/peach.go::Peach::Id --dst internal/
         ├── update.go
         ├── delete.go
         └── repository.go
+    ```
+    In root folder
+    ```
+    └── migrations
+        ├── <uuid>_create_<entity>.up.sql
+        └── <uuid>_create_<entity>.down.sql
     ```

@@ -5,6 +5,7 @@ import (
 
 	"github.com/not-for-prod/speedrun/internal/crud/generators"
 	"github.com/not-for-prod/speedrun/internal/crud/generators/funcs"
+	"github.com/not-for-prod/speedrun/internal/crud/generators/migrations"
 	"github.com/not-for-prod/speedrun/internal/crud/generators/model"
 	"github.com/not-for-prod/speedrun/internal/crud/generators/repository"
 	"github.com/not-for-prod/speedrun/internal/crud/models"
@@ -64,12 +65,14 @@ func (c generationCommand) execute() {
 	logger.Info("id:", id)
 
 	// generate models file
-	files := make([]models.File, 0, 10)
+	files := make([]models.File, 0, 4*2+2+1)
 	files = append(
-		model.Generate(currentPackage, c.srcPath, c.dstPath, c.structName, fields),
-		append(repository.Generate(c.dstPath, c.structName),
-			funcs.Generate(currentPackage, c.srcPath, c.dstPath, c.structName, id, fields)...,
-		)...,
+		append(
+			model.Generate(currentPackage, c.srcPath, c.dstPath, c.structName, fields),
+			append(repository.Generate(c.dstPath, c.structName),
+				funcs.Generate(currentPackage, c.srcPath, c.dstPath, c.structName, id, fields)...,
+			)...,
+		), migrations.Generate(c.structName, id, fields)...,
 	)
 
 	logger.Info("generated:", len(files), "files")
