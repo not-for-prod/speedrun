@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/not-for-prod/speedrun/cmd/crud/generators"
-	"github.com/not-for-prod/speedrun/cmd/crud/generators/funcs/templates"
-	"github.com/not-for-prod/speedrun/cmd/crud/models"
+	"github.com/not-for-prod/speedrun/internal/crud/generators"
+	"github.com/not-for-prod/speedrun/internal/crud/generators/funcs/templates"
+	"github.com/not-for-prod/speedrun/internal/crud/models"
 	string_tools "github.com/not-for-prod/speedrun/internal/pkg/string-tools"
 	"github.com/samber/lo"
 )

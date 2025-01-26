@@ -3,7 +3,7 @@ package funcs
 import (
 	"testing"
 
-	"github.com/not-for-prod/speedrun/cmd/crud/models"
+	"github.com/not-for-prod/speedrun/internal/crud/models"
 	"github.com/not-for-prod/speedrun/internal/pkg/logger"
 )
 

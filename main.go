@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/not-for-prod/speedrun/cmd/crud"
+	"github.com/not-for-prod/speedrun/internal/crud"
 	"github.com/spf13/cobra"
 )
 

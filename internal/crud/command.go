@@ -3,11 +3,11 @@ package crud
 import (
 	"strings"
 
-	"github.com/not-for-prod/speedrun/cmd/crud/generators"
-	"github.com/not-for-prod/speedrun/cmd/crud/generators/funcs"
-	"github.com/not-for-prod/speedrun/cmd/crud/generators/model"
-	"github.com/not-for-prod/speedrun/cmd/crud/generators/repository"
-	"github.com/not-for-prod/speedrun/cmd/crud/models"
+	"github.com/not-for-prod/speedrun/internal/crud/generators"
+	"github.com/not-for-prod/speedrun/internal/crud/generators/funcs"
+	"github.com/not-for-prod/speedrun/internal/crud/generators/model"
+	"github.com/not-for-prod/speedrun/internal/crud/generators/repository"
+	"github.com/not-for-prod/speedrun/internal/crud/models"
 	"github.com/not-for-prod/speedrun/internal/pkg/logger"
 )
 

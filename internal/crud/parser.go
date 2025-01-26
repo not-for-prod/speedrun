@@ -6,7 +6,7 @@ import (
 	"go/parser"
 	"go/token"
 
-	"github.com/not-for-prod/speedrun/cmd/crud/models"
+	"github.com/not-for-prod/speedrun/internal/crud/models"
 )
 
 // Parse the struct from the source file and return field names and types

@@ -3,8 +3,8 @@ package peach_repository
 import (
 	"context"
 
-	peach "github.com/not-for-prod/speedrun/cmd/crud/example/in"
-	"github.com/not-for-prod/speedrun/cmd/crud/example/out/peach/sql"
+	peach "github.com/not-for-prod/speedrun/internal/crud/example/in"
+	"github.com/not-for-prod/speedrun/internal/crud/example/out/peach/sql"
 	"go.opentelemetry.io/otel"
 )
 

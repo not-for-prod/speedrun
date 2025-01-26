@@ -1,7 +1,7 @@
 package peach_repository
 
 import (
-	peach "github.com/not-for-prod/speedrun/cmd/crud/example/in"
+	peach "github.com/not-for-prod/speedrun/internal/crud/example/in"
 )
 
 type dbPeach struct {
