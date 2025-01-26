@@ -14,6 +14,7 @@ func TestGenerate(t *testing.T) {
 		[]models.Field{
 			{Name: "Name", Type: "string"},
 			{Name: "Age", Type: "float64"},
+			{Name: "asdf", Type: "float64"},
 		},
 	)
 	logger.Info(result)

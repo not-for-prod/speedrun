@@ -11,10 +11,10 @@ import (
 
 var (
 	migrationUp = `
-create table {{toSnakeCase .StructName}} (
+create table {{toSnakeCase .StructName}}
 (
-    {{toSnakeCase .ID.Name}} {{sqlTypeMap .ID.Type}} PRIMARY KEY,
-    {{range $i, $field := .Fields}}{{toSnakeCase $field.Name}} {{sqlTypeMap $field.Type}}{{if $i}}, {{end}}
+    {{toSnakeCase .ID.Name}} {{sqlTypeMap .ID.Type}} PRIMARY KEY
+    , {{range $i, $field := .Fields}}{{if $i}}, {{end}}{{toSnakeCase $field.Name}} {{sqlTypeMap $field.Type}}
 	{{end}}
 );
 `
