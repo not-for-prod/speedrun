@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package in;
+
+option go_package = "pkg/api/in";
+
+message GetRequest {}
+message GetResponse {}
+
+service InService {
+    rpc Get(GetRequest) returns (GetResponse) {}
+}
