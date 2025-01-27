@@ -13,14 +13,14 @@ import (
 	"github.com/samber/lo"
 )
 
-type generationCommand struct {
+type crudCommand struct {
 	srcPath    string
 	dstPath    string
 	structName string
 	idField    string
 }
 
-func generationCommandFromString(src, dst string) generationCommand {
+func generationCommandFromString(src, dst string) crudCommand {
 	if src == "" {
 		logger.Fatalf("src flag is required: speedrun crud --src <path>::<struct name>::<id field> --dst <path>")
 	}
@@ -34,7 +34,7 @@ func generationCommandFromString(src, dst string) generationCommand {
 		logger.Fatalf("invalid src flag, expected: speedrun crud --src <path>::<struct name>::<id field> --dst <path>")
 	}
 
-	return generationCommand{
+	return crudCommand{
 		srcPath:    parts[0],
 		dstPath:    dst,
 		structName: parts[1],
@@ -42,7 +42,7 @@ func generationCommandFromString(src, dst string) generationCommand {
 	}
 }
 
-func (c generationCommand) execute() {
+func (c crudCommand) execute() {
 	currentPackage := GetModuleName()
 	logger.Info("current package:", currentPackage)
 

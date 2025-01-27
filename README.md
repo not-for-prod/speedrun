@@ -71,3 +71,17 @@ Output: ex. [internal/layout/example](internal/layout/example)
 │   └── pkg
 └── pkg
 ```
+
+## GRPC-Gateway
+
+> generates grpc-gateway boilerplate
+
+- buf
+- swagger
+- http and grpc handlers
+- middlewares that are working both for http and grpc
+
+## Additional
+
+### Errore
+### Burito
